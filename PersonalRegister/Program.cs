@@ -22,7 +22,9 @@ namespace PersonalRegister
             {
                 //bryt ut för att inte duplicera kod! Lägg in en metod
                 string name = Util.AskForString("Name: ");
+                if (name == "Q") break;
 
+                int salary = Util.AskForInt("Salary");
             } while (true);
 
             Employee[] employees = payroll.GetEmployees();

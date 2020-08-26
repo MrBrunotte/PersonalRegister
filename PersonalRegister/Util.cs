@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO.Pipes;
 
 namespace PersonalRegister
 {
@@ -18,6 +19,24 @@ namespace PersonalRegister
                 {
                     success = true;
                 }
+
+            } while (!success);
+
+            return answer;
+        }
+
+        internal static int AskForInt(string prompt)
+        {
+            bool success = false;
+            int answer;
+
+            do
+            {
+                string input = AskForString(prompt);
+
+                success = int.TryParse(input, out answer);
+                // inte så bra om man ska använda detta i ett annat program än i en konsol.
+                if (!success) Console.WriteLine("Wrong format");
 
             } while (!success);
 
