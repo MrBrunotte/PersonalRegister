@@ -8,27 +8,29 @@ namespace PersonalRegister
 {
     class Program
     {
-
+        static Payroll payroll = new Payroll();
         static void Main(string[] args)
         {
-            personal();
-        }
-        
-        static void personal()
-        {
-            List<string> personal = new List<string>();
+            
 
-            personal.Add("Stefan Brunotte 150000");
-            personal.Add("Stefan Brunotte 160000");
-            personal.Add("Stefan Brunotte 170000");
-            personal.Add("Stefan Brunotte 180000");
+            SeedData();
 
-            for (int i = 0; i < personal.Count; i++)
+            Employee[] employees = payroll.GetEmployees();
+
+            foreach (Employee employee in employees)
             {
-                Console.WriteLine(personal[i]);
+                Console.WriteLine(employee);
+                Console.WriteLine($"Name: {employee.Name} Salary: {employee.Salary}");
             }
+            
+        }
+
+        private static void SeedData()
+        {
+            payroll.AddEmployee("Kalle", 10000);
+            payroll.AddEmployee("Nisse", 15000);
+            payroll.AddEmployee("Lisa", 17000);
+            payroll.AddEmployee("Anne", 20000);
         }
     }
-
-     
 }
