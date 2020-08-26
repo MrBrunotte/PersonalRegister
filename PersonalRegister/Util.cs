@@ -4,6 +4,8 @@ using System.IO.Pipes;
 namespace PersonalRegister
 {
     internal static class Util
+        // util = utility = verktyg
+        // static och består av två hjälp metoder!
     {
         internal static string AskForString(string prompt)
         {
