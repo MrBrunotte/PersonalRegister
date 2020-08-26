@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Runtime.Versioning;
 
@@ -14,6 +15,15 @@ namespace PersonalRegister
             
 
             SeedData();
+
+            Console.WriteLine("Add a new Employee, Quit with Q");
+
+            do
+            {
+                //bryt ut för att inte duplicera kod! Lägg in en metod
+                string name = Util.AskForString("Name: ");
+
+            } while (true);
 
             Employee[] employees = payroll.GetEmployees();
 

@@ -5,12 +5,12 @@ namespace PersonalRegister
 {
     internal class Payroll
     {
-        // skapa listan payroll
+        // deklarera listan payroll
         private List<Employee> payroll;
 
         public Payroll()
         {
-            // instatiate the list payroll
+            // instatiate the list payroll, kan göras vid deklarationen direkt! (utanför constructor!)
             payroll = new List<Employee>();
         }
 
